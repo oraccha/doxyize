@@ -1,7 +1,11 @@
 #!/bin/sh
 
-temp=`mktemp /tmp/doxyize.XXXX`
+case "$0" in
+    /*) dir=`dirname $0`;;
+    *)  dir=`dirname $PWD/$0`;;
+esac
 
-./mkdiff.py $1 > $temp || exit 1
+temp=`mktemp /tmp/doxyize.XXXX`
+$dir/mkdiff.py $1 > $temp || exit 1
 patch $1 $temp || exit 1
 rm $temp
