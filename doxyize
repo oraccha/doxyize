@@ -1,0 +1,7 @@
+#!/bin/sh
+
+temp=`mktemp /tmp/doxyize.desc.XXXX`
+
+./mkdiff.py $1 > $temp || exit 1
+patch $1 $temp || exit 1
+rm $temp
