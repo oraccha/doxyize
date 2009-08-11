@@ -17,7 +17,7 @@ def printFuncDesc(fname, arg):
         print(">  * ")
     else:
         for a in arg.split(','):
-            tmp = a.lstrip(' \t').rstrip(' \t')
+            tmp = a.strip(' \t')
             (type, var) = tmp.split()
             var = var.lstrip('*')
             print(">  * @param " + var + " FIXME")

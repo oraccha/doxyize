@@ -1,3 +1,17 @@
 doxyize
 
 Copyright (c) 2009 oraccha
+
+----
+It only support the following coding style:
+
+ int
+ foo(int argc, char **argv)
+ {
+
+or
+
+ int
+ foo(int argc,
+     char **argv)
+ {
